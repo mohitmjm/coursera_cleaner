@@ -119,9 +119,9 @@ input_text = st.text_area("Paste your text here:", height=250, placeholder="Past
 
 col1, col2 = st.columns(2)
 with col1:
-    do_clean = st.button("🧹 Clean Only")
+    do_clean = st.button("🧹")
 with col2:
-    do_generate = st.button("🤖 Clean & Generate Answer")
+    do_generate = st.button("🤖")
 
 if do_clean or do_generate:
     if not input_text.strip():
@@ -129,7 +129,7 @@ if do_clean or do_generate:
         st.stop()
 
     cleaned_text = remove_repeated_paragraph(input_text, phrase_to_remove)
-    st.subheader("✅ Cleaned Text")
+    st.subheader("✅")
     st.text_area("Cleaned Text:", cleaned_text, height=200)
 
     if do_generate:
@@ -199,7 +199,7 @@ if do_clean or do_generate:
                 if not answer:
                     raise ValueError("Empty response from Gemini (no `text` or `candidates`).")
 
-                st.subheader("🤖 Gemini’s Answer")
+                st.subheader("🤖")
                 st.text_area("Answer:", answer, height=200)
 
             except Exception as e:
