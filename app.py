@@ -132,4 +132,4 @@ if do_clean or do_generate:
                 st.error(f"Error generating Gemini response: {e}")
 
 # Footer
-st.write("Made by Amishi 🤍")
+st.write("🤍")
